@@ -87,7 +87,7 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
 
 # TWRP
-TW_DEVICE_VERSION := 1_mentalmuso
+# TW_DEVICE_VERSION := 1_mentalmuso
 RECOVERY_VARIANT := twrp
 TW_THEME := landscape_hdpi
 RECOVERY_SDCARD_ON_DATA := true
