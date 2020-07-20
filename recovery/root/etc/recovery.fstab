@@ -2,7 +2,7 @@
 /boot		emmc	/dev/block/sda18
 /cache		ext4	/dev/block/sda23
 /recovery	emmc	/dev/block/sda19                					flags=backup=1
-/system		ext4	/dev/block/sda20
+/system_root		ext4	/dev/block/sda20
 /system_image	emmc	/dev/block/sda20
 /data		ext4	/dev/block/sda27					flags=encryptable=footer;length=-16384
 /modem		vfat	/dev/block/sda16					flags=display="Modem";mounttodecrypt;fsflags=ro

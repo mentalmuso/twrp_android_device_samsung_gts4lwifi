@@ -6,7 +6,7 @@
 # Currently we dont have e2fsck compiled. So fs check would failed.
 
 #<src>                                   <mnt_point>      <type> <mnt_flags and options>                          <fs_mgr_flags>
-/dev/block/sda20     /system          ext4   ro,errors=panic                                   wait
+/dev/block/sda20     /system_root          ext4   ro,errors=panic                                   wait
 /dev/block/sda27   /data            ext4   noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic   wait,check,encryptable=footer
 /dev/block/sda23      /cache      	  ext4   noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic   wait,check
 /dev/block/sda8       /misc            emmc   defaults                                         defaults

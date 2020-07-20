@@ -1,27 +1,4 @@
-#
-# Copyright 2018 The Android Open Source Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#      http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
-# This contains the module build definitions for the hardware-specific
-# components for this device.
-#
-# As much as possible, those components should be built unconditionally,
-# with device-specific names to avoid collisions, to avoid device-specific
-# bitrot and build breakages. Building a component unconditionally does
-# *not* include it on all devices, so it is safe even with hardware-specific
-# components.
+# mentalmuso
 
 # Architecture
 TARGET_ARCH := arm64
@@ -45,7 +22,7 @@ TARGET_BOOTLOADER_BOARD_NAME := msm8998
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/samsung/gts4lwifi/prebuilt/Image-dtb
+TARGET_PREBUILT_KERNEL := device/samsung/gts4llte/prebuilt/Image-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_APPEND_DTB := true
@@ -70,12 +47,16 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 # Workaround for error copying vendor files to recovery ramdisk
 TARGET_COPY_OUT_VENDOR := vendor
 
+# System as root
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_SUPPRESS_SECURE_ERASE := true
+
 # Recovery
-TARGET_OTA_ASSERT_DEVICE := gts4lwifi
+TARGET_OTA_ASSERT_DEVICE := gts4llte
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_RECOVERY_FSTAB := device/samsung/gts4lwifi/recovery/root/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := device/samsung/gts4llte/recovery/root/etc/recovery.fstab
 
 # Android Verified Boot
 BOARD_AVB_ENABLE := false
@@ -86,22 +67,24 @@ BOARD_BUILD_DISABLED_VBMETAIMAGE := true
 #PLATFORM_SECURITY_PATCH := 2025-12-31
 
 # TWRP
-TW_DEVICE_VERSION := 3_mentalmuso
+TW_DEVICE_VERSION := 6_mentalmuso
 RECOVERY_VARIANT := twrp
-TW_THEME := landscape_hdpi
-#TW_ROTATION := 270
+TW_USE_TOOLBOX := true
+#TW_THEME := landscape_hdpi
+#RECOVERY_TOUCHSCREEN_SWAP_XY := true
+#RECOVERY_TOUCHSCREEN_FLIP_Y := true
+TW_ROTATION := 270
+TW_THEME := portrait_hdpi
 TW_SCREEN_BLANK_ON_BOOT := true
 RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
-TW_DEFAULT_BRIGHTNESS := 130
+TW_DEFAULT_BRIGHTNESS := 120
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 TW_INCLUDE_NTFS_3G := true
-RECOVERY_TOUCHSCREEN_SWAP_XY := true
-RECOVERY_TOUCHSCREEN_FLIP_Y := true
 TW_EXCLUDE_SUPERSU := true
 TW_USE_NEW_MINADBD := true
 TW_EXTRA_LANGUAGES := true

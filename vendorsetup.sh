@@ -1,1 +1,1 @@
-add_lunch_combo omni_gts4lwifi-eng
+add_lunch_combo omni_gts4llte-eng

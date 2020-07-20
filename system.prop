@@ -1,3 +1,0 @@
-sys.usb.controller=a600000.dwc3
-sys.usb.config=mtp
-sys.usb.configfs=1
